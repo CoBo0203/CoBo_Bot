@@ -1,5 +1,6 @@
 import asyncio
 import discord
+import os
 client=discord.Client()
 async def my_background_task():
     await client.wait_until_ready()
@@ -20,7 +21,10 @@ async def my_background_task():
         await client.change_presence(status=discord.Status.online, activity=game)
         await asyncio.sleep(3)
 client.loop.create_task(my_background_task())
-token="Njc0MDc1NDEzNjc2NTU2Mjk4.Xjjcpw.AEtLKqSfhIBvYcqwCbQ2GS9YnmI"
+
+
+access_token = os.environ["BOT_TOKEN"]
+token=access_token
 @client.event
 async def on_ready():
     print('CoBo Bot on')
