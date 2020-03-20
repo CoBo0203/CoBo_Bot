@@ -24,7 +24,7 @@ client.loop.create_task(my_background_task())
 
 
 access_token = os.environ["BOT_TOKEN"]
-token=access_token
+client.run(access_token)
 @client.event
 async def on_ready():
     print('CoBo Bot on')
